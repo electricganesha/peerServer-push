@@ -1,0 +1,14 @@
+[Unit]
+Description=PeerJS Server
+
+[Service]
+ExecStart=/usr/local/bin/node /home/pushint/peerServer/server.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=peerServer
+Environment=NODE_ENV=production PORT=55127
+
+[Install]
+WantedBy=multi-user.target
